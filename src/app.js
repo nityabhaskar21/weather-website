@@ -11,6 +11,8 @@ console.log(path.join(__dirname,'../public'));
 
 const app = express();
 
+const port = process.env.PORT || 3000;
+
 //define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public');
 const viewsPath = path.join(__dirname,'../templates/views');
@@ -81,8 +83,8 @@ app.get('*',(req, res) => {
   res.render('404',{errorMsg:'Page not found!',name:'Nityanand Bhaskar'})
 })
 
-app.listen(3000, () => {
-  console.log('Server running')
+app.listen(port, () => {
+  console.log('Server running on port ' + port)
 }) 
  
 
